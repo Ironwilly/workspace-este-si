@@ -42,7 +42,7 @@ public class Principal {
 		
 		a1=new Ascensor(plantasTotal,pisoActual,personas);
 		
-		System.out.println(a1.subirBajar());
+		
 		
 		
 		
