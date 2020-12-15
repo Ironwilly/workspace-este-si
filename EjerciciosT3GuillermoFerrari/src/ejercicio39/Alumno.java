@@ -111,12 +111,7 @@ public class Alumno {
 		
 		//método calcular nota media
 		
-		public double calcularMedia() {
-			
-			double notaMedia;
-			int a,b;
-			notaMedia=calcularNotas(a,b);
-		}
+		
 		
 		
 		
