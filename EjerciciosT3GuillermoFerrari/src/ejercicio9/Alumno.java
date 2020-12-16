@@ -67,7 +67,7 @@ public class Alumno {
 		for(int i=0;i<notas.length;i++) {
 			
 			System.out.println("Introduzca una nota del alumno ");
-			notas[i]=Leer.datoDouble();
+			notas[i]=Leer.datoDouble(); /// esto esta mal,nunca se LEE POR TECLADO dentro de un metodo, las lecturas van en el main
 			
 			
 			
