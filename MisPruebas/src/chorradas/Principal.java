@@ -10,7 +10,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		
-		int [][]primero;
+		String [][]primero;
 		
 		int tam1,tam2;
 		int desde = 0, hasta = 9;
@@ -24,12 +24,14 @@ public class Principal {
 		
 		System.out.println("Tamaño de las filas: \n");
 		tam2=Leer.datoInt();
-		primero = new int[tam1][tam2];
+		primero = new String[tam1][tam2];
 		
 		for (int i=0;i < primero.length ; i++) {
 			for(int j=0; j <primero[i].length ; j++) {
 				
-			primero[i][j]=0;
+			primero[i][j]="***"
+					+ "***"
+					+ "***";
 			System.out.print(primero[i][j]+ " ");
 			}
 			
