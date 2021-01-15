@@ -1,7 +1,10 @@
 package boss;
 
 import java.util.Random;
+
+import datos.BaseDatos;
 import utilidades.Leer;
+import vista.vistaMapas;
 
 public class Principal {
 
@@ -17,7 +20,14 @@ public class Principal {
 
 		// variables menu
 		int menu1, menu2;
-
+		
+		
+		BaseDatos bd = new BaseDatos ();
+		vistaMapas visMa1 = new vistaMapas ();
+		visMa1.mostrarMapa(bd.getMapa1());
+		
+		
+/*
 		do {
 		System.out.println(
 				"*****************************************************************************************************************\r\n"
@@ -167,8 +177,8 @@ public class Principal {
 
 			System.out.println("");
 
-		}*/
-
+		}
+*/
 	}
 
 }
