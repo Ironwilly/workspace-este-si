@@ -3,6 +3,7 @@ package boss;
 import java.util.Random;
 
 import datos.BaseDatos;
+import datos.Reglas;
 import utilidades.Leer;
 import vista.vistaMapas;
 
@@ -19,15 +20,22 @@ public class Principal {
 		int ale;
 
 		// variables menu
-		int menu1, menu2;
+		int menu1, menu2,menu3;
+		
+		String jugador1,jugador2;
 		
 		
 		BaseDatos bd = new BaseDatos ();
 		vistaMapas visMa1 = new vistaMapas ();
+		vistaMapas visMa2 = new vistaMapas ();
+		vistaMapas visMa3 = new vistaMapas ();
 		visMa1.mostrarMapa(bd.getMapa1());
+		visMa2.mostrarMapa(bd.getMapa2());
+		visMa3.mostrarMapa(bd.getMapa3());
 		
+		Reglas r=new Reglas();
 		
-/*
+
 		do {
 		System.out.println(
 				"*****************************************************************************************************************\r\n"
@@ -61,7 +69,7 @@ public class Principal {
 		
 		switch(menu1){
 			case 1:
-				
+				r.imprimirReglas();
 				
 				break;
 			case 2:
@@ -78,61 +86,32 @@ public class Principal {
 				menu2=Leer.datoInt();
 				switch(menu2) {
 				case 1:
-					tam1 = 10;
-					tam2 = 10;
-					primero = new String[tam1][tam2];
-
-					for (int i = 0; i < primero.length; i++) {
-						for (int j = 0; j < primero[i].length; j++) {
-
-							primero[i][j] = "■";
-							System.out.print(primero[i][j] + " ");
-						}
-
-						System.out.println("");
-
-					}
+					System.out.println("Introduzca nombre jugador1:");
+					jugador1=Leer.dato();
+					System.out.println("Introduzca nombre jugador2:");
+					jugador2=Leer.dato();
+					System.out.println(jugador1);
 					
-					System.out.println("\n\n");
+					
+					
+					visMa1.mostrarMapa(bd.getMapa1());
+					
+					
+					
 					break;
 				case 2:
 					
-					tam1 = 15;
-					tam2 = 15;
-					primero = new String[tam1][tam2];
-
-					for (int i = 0; i < primero.length; i++) {
-						for (int j = 0; j < primero[i].length; j++) {
-
-							primero[i][j] = "■";
-							System.out.print(primero[i][j] + " ");
-						}
-
-						System.out.println("");
-
-					}
-					
-					System.out.println("\n\n");
+					visMa2.mostrarMapa(bd.getMapa2());
 					
 					
 					
 					break;
 					
 				case 3:
-					tam1 = 20;
-					tam2 = 20;
-					primero = new String[tam1][tam2];
-
-					for (int i = 0; i < primero.length; i++) {
-						for (int j = 0; j < primero[i].length; j++) {
-
-							primero[i][j] = "■";
-							System.out.print(primero[i][j] + " ");
-						}
-
-						System.out.println("");
-
-					}
+					
+					
+					visMa3.mostrarMapa(bd.getMapa3());
+					
 					
 					System.out.println("\n\n");
 					break;
