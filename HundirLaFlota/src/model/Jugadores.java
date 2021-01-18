@@ -17,6 +17,8 @@ public class Jugadores {
 		this.puntuacion = puntuacion;
 		this.lanzamientos = lanzamientos;
 	}
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,6 +41,8 @@ public class Jugadores {
 	public String toString() {
 		return "Jugadores [nombre=" + nombre + ", puntuacion=" + puntuacion + ", lanzamientos=" + lanzamientos + "]";
 	}
+	
+	
 	
 	
 	

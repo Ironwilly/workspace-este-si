@@ -4,6 +4,7 @@ import java.util.Random;
 
 import datos.BaseDatos;
 import datos.Reglas;
+import model.Jugadores;
 import utilidades.Leer;
 import vista.vistaMapas;
 
@@ -22,9 +23,11 @@ public class Principal {
 		// variables menu
 		int menu1, menu2,menu3;
 		
-		String jugador1,jugador2;
 		
+		//jugadores
+		String nombrePlayer1,nombrePlayer2;
 		
+	
 		BaseDatos bd = new BaseDatos ();
 		vistaMapas visMa1 = new vistaMapas ();
 		vistaMapas visMa2 = new vistaMapas ();
@@ -33,6 +36,9 @@ public class Principal {
 		visMa2.mostrarMapa(bd.getMapa2());
 		visMa3.mostrarMapa(bd.getMapa3());
 		
+		
+		Jugadores player1 = new Jugadores (nombre);
+		Jugadores player2 = new Jugadores ();
 		Reglas r=new Reglas();
 		
 
@@ -87,10 +93,11 @@ public class Principal {
 				switch(menu2) {
 				case 1:
 					System.out.println("Introduzca nombre jugador1:");
-					jugador1=Leer.dato();
+					nombrePlayer1=Leer.dato();
 					System.out.println("Introduzca nombre jugador2:");
-					jugador2=Leer.dato();
-					System.out.println(jugador1);
+					nombrePlayer2=Leer.dato();
+					System.out.println(player1.setNombre(nombrePlayer1));
+					System.out.println(jugador2);
 					
 					
 					
@@ -101,7 +108,7 @@ public class Principal {
 					break;
 				case 2:
 					
-					visMa2.mostrarMapa(bd.getMapa2());
+					 visMa2.mostrarMapa(bd.getMapa2());
 					
 					
 					
@@ -110,7 +117,7 @@ public class Principal {
 				case 3:
 					
 					
-					visMa3.mostrarMapa(bd.getMapa3());
+					/* visMa3.mostrarMapa(bd.getMapa3());*/
 					
 					
 					System.out.println("\n\n");
