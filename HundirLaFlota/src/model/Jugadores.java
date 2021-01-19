@@ -18,6 +18,14 @@ public class Jugadores {
 		this.lanzamientos = lanzamientos;
 	}
 	
+	public Jugadores(String nombre) {
+		super();
+		this.nombre = nombre;
+		this.puntuacion = 0;
+		this.lanzamientos = 100;
+	}
+	
+	
 	
 	public String getNombre() {
 		return nombre;

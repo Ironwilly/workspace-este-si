@@ -27,18 +27,20 @@ public class Principal {
 		//jugadores
 		String nombrePlayer1,nombrePlayer2;
 		
+		
+		//barcos
+		
+		
 	
 		BaseDatos bd = new BaseDatos ();
 		vistaMapas visMa1 = new vistaMapas ();
 		vistaMapas visMa2 = new vistaMapas ();
 		vistaMapas visMa3 = new vistaMapas ();
-		visMa1.mostrarMapa(bd.getMapa1());
-		visMa2.mostrarMapa(bd.getMapa2());
-		visMa3.mostrarMapa(bd.getMapa3());
 		
+	
 		
-		Jugadores player1 = new Jugadores (nombre);
-		Jugadores player2 = new Jugadores ();
+		Jugadores player1;
+		/*Jugadores player2 = new Jugadores ();*/
 		Reglas r=new Reglas();
 		
 
@@ -92,12 +94,15 @@ public class Principal {
 				menu2=Leer.datoInt();
 				switch(menu2) {
 				case 1:
+					
 					System.out.println("Introduzca nombre jugador1:");
 					nombrePlayer1=Leer.dato();
+					player1= new Jugadores(nombrePlayer1);
+					System.out.println(player1);
 					System.out.println("Introduzca nombre jugador2:");
 					nombrePlayer2=Leer.dato();
-					System.out.println(player1.setNombre(nombrePlayer1));
-					System.out.println(jugador2);
+					player1= new Jugadores(nombrePlayer2);
+					
 					
 					
 					
@@ -107,6 +112,9 @@ public class Principal {
 					
 					break;
 				case 2:
+				
+			
+					
 					
 					 visMa2.mostrarMapa(bd.getMapa2());
 					
@@ -117,7 +125,7 @@ public class Principal {
 				case 3:
 					
 					
-					/* visMa3.mostrarMapa(bd.getMapa3());*/
+					visMa3.mostrarMapa(bd.getMapa3());
 					
 					
 					System.out.println("\n\n");
