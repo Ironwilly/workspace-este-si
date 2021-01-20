@@ -3,6 +3,7 @@ package model;
 public class Barco {
 	
 	
+	public static int length;
 	private int tam;
 	private String nombre;
 	private int tipo;

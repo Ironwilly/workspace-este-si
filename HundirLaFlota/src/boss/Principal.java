@@ -3,6 +3,7 @@ package boss;
 import java.util.Random;
 
 import datos.BaseDatos;
+import datos.BdBarcos;
 import datos.Reglas;
 import model.Jugadores;
 import utilidades.Leer;
@@ -30,18 +31,32 @@ public class Principal {
 		
 		//barcos
 		
+		BdBarcos BdBarcosTeclado = new BdBarcos();
 		
-	
+		vistaMapas cargBarcos = new vistaMapas ();
+		
+	    //mapa
 		BaseDatos bd = new BaseDatos ();
+			
 		vistaMapas visMa1 = new vistaMapas ();
 		vistaMapas visMa2 = new vistaMapas ();
 		vistaMapas visMa3 = new vistaMapas ();
 		
 	
-		
+		//jugadores
 		Jugadores player1;
-		/*Jugadores player2 = new Jugadores ();*/
-		Reglas r=new Reglas();
+		Jugadores player2 ;
+		
+		//reglas
+		Reglas regl=new Reglas();
+		
+		//es falso mientras no termine la partida
+		
+		boolean  partidaTerminada = false;
+		
+		//disparos
+		
+		boolean disparoAcertado = false;
 		
 
 		do {
@@ -77,7 +92,7 @@ public class Principal {
 		
 		switch(menu1){
 			case 1:
-				r.imprimirReglas();
+				regl.imprimirReglas();
 				
 				break;
 			case 2:
@@ -96,15 +111,24 @@ public class Principal {
 				case 1:
 					
 					System.out.println("Introduzca nombre jugador1:");
+					
 					nombrePlayer1=Leer.dato();
+					
 					player1= new Jugadores(nombrePlayer1);
+					
 					System.out.println(player1);
+					
+					
 					System.out.println("Introduzca nombre jugador2:");
+					
 					nombrePlayer2=Leer.dato();
-					player1= new Jugadores(nombrePlayer2);
+					
+					player2= new Jugadores(nombrePlayer2);
+					
+					System.out.println(player2);
 					
 					
-					
+					cargBarcos.cargarBarcos(BdBarcosTeclado.getB4());
 					
 					visMa1.mostrarMapa(bd.getMapa1());
 					
