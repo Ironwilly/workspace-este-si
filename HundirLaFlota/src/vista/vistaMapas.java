@@ -25,6 +25,31 @@ public class vistaMapas {
 			
 		}
 		
+		public void pintarConBarco (String [][] mapa, Barco b, int fila, int columna, int sentido ) {
+			
+			for (int i = 0; i < mapa.length; i++) {
+				for (int j = 0; j < mapa[i].length; j++) {
+					if(i==fila && j==columna) {
+						for( int tam=0;tam < b.getTam();tam++) {
+							
+						System.out.println(b.getTipo());
+						}
+					}else {
+						System.out.print(mapa[i][j] + " ");
+					}
+					
+					
+					
+					
+					
+				}
+
+				System.out.println("");
+
+			}
+			
+		}	
+		
 		//método cargar barcos
 		
 		public void cargarBarcos(String[] [] b4) {

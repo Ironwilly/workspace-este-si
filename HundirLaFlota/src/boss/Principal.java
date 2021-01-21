@@ -20,6 +20,8 @@ public class Principal {
 		int tam1, tam2;
 		int desde = 0, hasta = 9;
 		int ale;
+		
+		int fila, columna, sentido=1;
 
 		// variables menu
 		int menu1, menu2,menu3;
@@ -31,7 +33,7 @@ public class Principal {
 		
 		//barcos
 		
-		BdBarcos BdBarcosTeclado = new BdBarcos();
+		BdBarcos bdB = new BdBarcos();
 		
 		vistaMapas cargBarcos = new vistaMapas ();
 		
@@ -39,8 +41,7 @@ public class Principal {
 		BaseDatos bd = new BaseDatos ();
 			
 		vistaMapas visMa1 = new vistaMapas ();
-		vistaMapas visMa2 = new vistaMapas ();
-		vistaMapas visMa3 = new vistaMapas ();
+
 		
 	
 		//jugadores
@@ -58,7 +59,21 @@ public class Principal {
 		
 		boolean disparoAcertado = false;
 		
-
+		//visMa1.mostrarMapa(bd.getMapa3());
+		
+		System.out.println("En qué fila");
+		fila=Leer.datoInt();
+		System.out.println("En qué columna");
+		columna=Leer.datoInt();
+		
+		
+		visMa1.pintarConBarco(bd.getMapa2(),bdB.getB3(),fila, columna, sentido);
+		
+		
+		
+		
+		
+/*
 		do {
 		System.out.println(
 				"*****************************************************************************************************************\r\n"
@@ -128,7 +143,7 @@ public class Principal {
 					System.out.println(player2);
 					
 					
-					cargBarcos.cargarBarcos(BdBarcosTeclado.getB4());
+					cargBarcos.cargarBarcos(primero);
 					
 					visMa1.mostrarMapa(bd.getMapa1());
 					
@@ -175,7 +190,7 @@ public class Principal {
 		}
 		
 		}while(menu1 !=0);
-		
+		*/
 		/*Random r;
 		r = new Random(System.nanoTime());
 
