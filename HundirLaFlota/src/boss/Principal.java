@@ -15,13 +15,18 @@ public class Principal {
 		// TODO Auto-generated method stub
 
 		// variables del mapa
-		String[][] primero;
+		String[][] canoa;
+		String[][] fragatas;
+		
+		
+		
 
 		int tam1, tam2;
 		int desde = 0, hasta = 9;
 		int ale;
 		
 		int fila, columna, sentido=1;
+		int filaMem=0, columnaMem=0;
 
 		// variables menu
 		int menu1, menu2,menu3;
@@ -41,6 +46,7 @@ public class Principal {
 		BaseDatos bd = new BaseDatos ();
 			
 		vistaMapas visMa1 = new vistaMapas ();
+		
 
 		
 	
@@ -61,13 +67,52 @@ public class Principal {
 		
 		//visMa1.mostrarMapa(bd.getMapa3());
 		
-		System.out.println("En qué fila");
+		
+		// ponemos la canóa
+		
+		System.out.println("¿ En qué fila quieres poner la cánoa? ");
 		fila=Leer.datoInt();
-		System.out.println("En qué columna");
+		filaMem = filaMem +fila;
+		System.out.println("¿ En qué columna quieres poner la cánoa ? ");
 		columna=Leer.datoInt();
+		columnaMem= columnaMem + columna;
+		
+		canoa=new String[filaMem][columnaMem];
+		
+		visMa1.pintarConBarco(bd.getMapa3(),bdB.getB1(),filaMem, columnaMem, sentido);
+		
+		bd.setMapa3(canoa);
+		
+      
 		
 		
-		visMa1.pintarConBarco(bd.getMapa2(),bdB.getB3(),fila, columna, sentido);
+		
+	
+		
+		
+		// ponemos las fragatas
+		
+
+		System.out.println("¿ En qué fila quieres poner la primera fragata ?");
+		fila=Leer.datoInt();
+		filaMem = filaMem +fila;
+		System.out.println("¿ En qué columna quieres poner la primera fragata ?");
+		columna=Leer.datoInt();
+		columnaMem= columnaMem + columna;
+		
+		fragatas=new String[filaMem][columnaMem];
+		
+		
+		
+		visMa1.pintarConBarco(bd.getMapa3(),bdB.getB2(),filaMem, columnaMem, sentido);
+		
+			bd.setMapa3(fragatas);
+		
+			
+			
+		
+		
+		
 		
 		
 		

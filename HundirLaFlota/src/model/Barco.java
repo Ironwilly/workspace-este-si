@@ -6,6 +6,7 @@ public class Barco {
 	private int tam;
 	private String nombre;
 	private String tipo;
+	private  int cantidad;
 	
 	
 	

@@ -18,7 +18,7 @@ public class BaseDatos {
 		return mapa1;
 	}
 
-	public void setMapa2(String[][] mapa1) {
+	public void setMapa1(String[][] mapa1) {
 		this.mapa1 = mapa1;
 	}
 
@@ -33,14 +33,18 @@ public class BaseDatos {
 	{"■","■","■","■","■","■","■","■","■","■"},
 	{"■","■","■","■","■","■","■","■","■","■"}};
 
+	
+	
+	
+	
 	public String[][] getMapa2() {
 		return mapa2;
 	}
 
-	public void setMapa1(String[][] mapa2) {
+	public void setMapa2(String[][] mapa2) {
 		this.mapa2 = mapa2;
 	}
-	
+
 	String [][] mapa3 = {{"■","■","■","■","■","■","■","■","■","■","■","■","■","■","■"},
 			{"■","■","■","■","■","■","■","■","■","■","■","■","■","■","■"},
 			{"■","■","■","■","■","■","■","■","■","■","■","■","■","■","■"},
@@ -71,7 +75,19 @@ public class BaseDatos {
 	
 	
 	
-	}
+	
+
+		
+
+	
+	
+	
+	
+}
+	
+	
+	
+	
 	
 	
 	
