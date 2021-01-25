@@ -79,14 +79,11 @@ public class Principal {
 		
 		canoa=new String[filaMem][columnaMem];
 		
-		visMa1.pintarConBarco(bd.getMapa3(),bdB.getB1(),filaMem, columnaMem, sentido);
+	   
 		
-		bd.setMapa3(canoa);
+	
 		
-      
-		
-		
-		
+     
 	
 		
 		
@@ -96,6 +93,7 @@ public class Principal {
 		System.out.println("¿ En qué fila quieres poner la primera fragata ?");
 		fila=Leer.datoInt();
 		filaMem = filaMem +fila;
+		
 		System.out.println("¿ En qué columna quieres poner la primera fragata ?");
 		columna=Leer.datoInt();
 		columnaMem= columnaMem + columna;
@@ -104,9 +102,8 @@ public class Principal {
 		
 		
 		
-		visMa1.pintarConBarco(bd.getMapa3(),bdB.getB2(),filaMem, columnaMem, sentido);
 		
-			bd.setMapa3(fragatas);
+		visMa1.pintarConBarco(bd.getMapa3(),bdB.getB1(),bdB.getB2(),filaMem, columnaMem, sentido);
 		
 			
 			
