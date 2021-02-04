@@ -22,7 +22,8 @@ public class Principal {
 		
 		 */
 		
-		int porcentaje;
+		int ganancias;
+		double seguro=0;
 		
 
 		Ordenador Ord1= new Ordenador(500,3.2,650,8);
@@ -35,28 +36,30 @@ public class Principal {
 		
 		
 		System.out.println("Diga el porcentaje de ganancias que quieres aplicar sobre el precio base al ordenador: ");
-		porcentaje=Leer.datoInt();
+		ganancias=Leer.datoInt();
 		
-		System.out.println(Ord1);
-		System.out.printf("El precio final del ordenador es de %.2f euros \n\n",Ord1.calcularPrecioFinal(porcentaje));
+		
+		System.out.println(Ord1); //esto es lo mismo que imprimir el toString, Y NO HAY QUE PONER LA PALABRA TOSTRING , ANGEL NO LO QUIERE
+		System.out.printf("El precio final del ordenador es de %.2f euros \n\n",Ord1.calcularPrecioFinal(ganancias,seguro));
 		
 		
 		System.out.println("El precio de 15 euros del plus del seguro de rotura se le suma al precio final de la tablet");
 	
 		System.out.println("Diga el porcentaje de ganancias que quieres aplicar sobre el precio base de la tablet: ");
-		porcentaje=Leer.datoInt();
+		ganancias=Leer.datoInt();
 		
 		System.out.println(Tabl1);
-		System.out.printf("El precio final de la tablet con el plus de seguro de rotura es de %.2f euros \n\n",Tabl1.calcularPrecioFinal(porcentaje));
+		System.out.printf("El precio final de la tablet con el plus de seguro de rotura es de %.2f euros \n\n",Tabl1.calcularPrecioFinal(ganancias,seguro));
 		
 		
 			
-		System.out.println("El porcentaje de descuentos es del 8% que se le recta al precio final del portátil.");
+		System.out.println("Diga el precio del seguro a sumar al precio total: ");
+		seguro=Leer.datoDouble();
 		System.out.println("Diga el porcentaje de ganancias que quieres aplicar sobre el precio base del portatil: ");
-		porcentaje=Leer.datoInt();
+		ganancias=Leer.datoInt();
 		
 		System.out.println(Porta1);
-		System.out.printf("El precio del portatil con descuento es de %.2f euros \n\n",Porta1.calcularPrecioFinal(porcentaje));
+		System.out.printf("El precio del portatil con descuento es de %.2f euros \n\n",Porta1.calcularPrecioFinal(ganancias,seguro));
 		
 			
 			

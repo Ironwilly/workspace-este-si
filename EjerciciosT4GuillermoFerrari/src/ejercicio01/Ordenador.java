@@ -72,7 +72,7 @@ public class Ordenador {
 	
 	//metodos
 	
-	public double calcularPrecioFinal(int porcentaje) {
+	public double calcularPrecioFinal(int ganancias,double porcentajeSeguro) {
 		
 		
 		int denominador = 100;
@@ -81,7 +81,7 @@ public class Ordenador {
 		
 		
 		
-		precioFinal = precioBase + (precioBase*porcentaje)/denominador ;
+		precioFinal = precioBase + (precioBase*ganancias)/denominador ;
 		return  precioFinal;
 		
 		

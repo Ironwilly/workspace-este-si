@@ -48,18 +48,18 @@ public class Portatil extends Ordenador{
 	
 	//metodos
 	
-	public double calcularPrecioFinal(int porcentaje) {
+	public double calcularPrecioFinal(int porcentaje,double porcentajeSeguro) {
 		
 		
 		int denominador = 100;
 		double precioFinal;
-		int descuento = 8;
+		
 		
 	
 		
 		
-		precioFinal = (precioBase + (precioBase*porcentaje)/denominador);
-	    precioFinal = precioFinal - (precioFinal*descuento)/denominador ;
+		precioFinal = super.calcularPrecioFinal(porcentaje,porcentajeSeguro); // se pone super para llamar al metodo de la clase superior (ordenador),ya que calcula el precio final de igual manera
+	    precioFinal = precioFinal - (precioFinal*porcentajeSeguro)/denominador ;
 		return precioFinal;
 		
 		

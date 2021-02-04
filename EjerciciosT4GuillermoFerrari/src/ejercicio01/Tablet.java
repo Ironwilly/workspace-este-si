@@ -45,17 +45,17 @@ public class Tablet extends Ordenador{
 	
 	//metodos
 	
-	public double calcularPrecioFinal(int porcentaje) {
+	public double calcularPrecioFinal(int ganancias, double porcentajeSeguro) {
 		
 		
 		int denominador = 100;
 		double precioFinal;
-		int plusSeguro = 15;
 		
 	
 		
 		
-		precioFinal =precioBase + (precioBase*porcentaje)/denominador  + plusSeguro;
+		precioFinal = super.calcularPrecioFinal(ganancias,porcentajeSeguro) + porcentajeSeguro;  // se pone super para llamar al metodo de la clase superior (ordenador),ya que calcula el precio final de igual manera
+		
 		return precioFinal;
 		
 		
