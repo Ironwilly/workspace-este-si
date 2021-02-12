@@ -54,7 +54,7 @@ public class Alimentacion extends Producto {
 		double denominador = 100;
 		
 		if(diasParaCaducidad<=topeDias ) {
-			return getPvp()- getPvp()*descuento/denominador;
+			return super.getPvp()- super.getPvp()*descuento/denominador;
 		}else {
 		return getPvp();
 		}
