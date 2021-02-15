@@ -55,7 +55,11 @@ public class Principal {
 		lista[1] = new EmpleadoAComision("Manolito", sueldoBase, recaudadoVentas, 765653, incentivos);
 		lista[2] = new Empleado("Juanito", sueldoBase, recaudadoVentas, 45345);
 
+<<<<<<< HEAD
 		Empleado e1 = new EmpleadoFijo("Pedrito", sueldoBase, recaudadoVentas, 35345, impuestos);
+=======
+		//Empleado e1 = new EmpleadoFijo("Pedrito", sueldoBase, recaudadoVentas, 35345, impuestos);
+>>>>>>> 7225bad6b3fe375d114e41e4e060d6a38e07041d
 
 		Empleado e2 = new EmpleadoAComision("Manolito", sueldoBase, recaudadoVentas, 765653, incentivos);
 
@@ -63,9 +67,15 @@ public class Principal {
 
 		Oficina of1 = new Oficina();
 
+<<<<<<< HEAD
 		System.out.println(e1);
 		System.out.printf("El sueldo de un empleado fijo es de %.2f euros \n\n",
 				e1.calcularSueldo(), "\n\n");
+=======
+		System.out.println(lista[0]);
+		System.out.printf("El sueldo de un empleado fijo es de %.2f euros \n\n",
+				lista[0].calcularSueldo(), "\n\n");
+>>>>>>> 7225bad6b3fe375d114e41e4e060d6a38e07041d
 
 		System.out.println(e2);
 		System.out.printf("El sueldo de un empleado a comisión es de %.2f euros \n\n",
@@ -78,7 +88,11 @@ public class Principal {
 		
 
 		
+<<<<<<< HEAD
 			 System.out.println(of1.calcularElSueldoDeUnEmpleado(e1));
+=======
+			 System.out.println(of1.calcularElSueldoDeUnEmpleado(lista[0]));
+>>>>>>> 7225bad6b3fe375d114e41e4e060d6a38e07041d
 			 System.out.println(of1.calcularElSueldoDeUnEmpleado(e2));
 			 System.out.println(of1.calcularElSueldoDeUnEmpleado(emp));
 			 System.out.printf("La oficina se ha gastado en total de todos los empleados: %.2f euros \n", 

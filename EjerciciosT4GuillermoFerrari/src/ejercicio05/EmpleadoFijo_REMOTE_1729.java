@@ -41,11 +41,7 @@ public class EmpleadoFijo extends Empleado{
 		int denominador = 100;
 		
 		
-<<<<<<< HEAD
-		return (super.getSueldoBase()*impuestos)/100;
-=======
 		return (super.getSueldoBase()*impuestos)/denominador;
->>>>>>> 7225bad6b3fe375d114e41e4e060d6a38e07041d
 	}
 
 	

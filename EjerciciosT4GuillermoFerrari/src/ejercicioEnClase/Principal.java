@@ -22,6 +22,50 @@ public class Principal {
 		 * de alimentación le falten menos de dos días para caducar.
 		 * 
 		 */
+		
+		//no hemos hecho los productos de electronica por que no esta realizada
+		
+		double descuento = 10.0;
+		int topeDias =4;
+		
+		
+		Producto p1=new Alimentacion ("Lechuga",1.20,2.00,3,true);
+		
+		Producto p2=new Alimentacion ("Tomate",1.70,2.00,6,true);
+		
+		Producto p3=new Alimentacion ("Leche",0.80,1.00,10,true);
+		
+		Producto p4= new Electronica ("Televisor",500, 630,10,true);
+		
+		Producto p5= new Electronica ("Cafetera", 125, 199,5,false);
+		
+		Producto p6 = new Electronica ("Portati",600,699,12,true);
+		
+		
+		//creamos los objetos
+		LineaDeVenta lv1 = new LineaDeVenta (2,p1);
+		
+		LineaDeVenta lv2 = new LineaDeVenta (3,p2);
+		
+		LineaDeVenta lv3 = new LineaDeVenta (6,p2);
+		
+		LineaDeVenta lv4 = new LineaDeVenta (2,p4);
+		
+		LineaDeVenta lv5 = new LineaDeVenta (1,p5);
+		
+		LineaDeVenta lv6 = new LineaDeVenta (3,p6);
+		
+		//agregamos objetos directamente en la inicializacion del array
+		LineaDeVenta listado [] = {lv1,lv2,lv3,lv4,lv5,lv6};
+		
+		
+		Carrito ca = new Carrito (listado);
+		
+		
+		
+		System.out.printf("%.2f",ca.calcularTotal(descuento, topeDias));
+		
+		
 
 	}
 
