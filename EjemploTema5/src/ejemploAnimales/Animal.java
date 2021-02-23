@@ -57,6 +57,15 @@ public class Animal implements IDepredador, ICuidador{
 	}
 
 
+	//ToString
+
+
+
+
+	@Override
+	public String toString() {
+		return "Animal [nombre=" + nombre + ", tipoAlimentacion=" + tipoAlimentacion + "]";
+	}
 
 
 

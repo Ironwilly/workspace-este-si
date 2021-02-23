@@ -10,6 +10,8 @@ public class Principal {
 		Animal a= new Animal ("León",1);
 		Animal presa =new Animal ("Gacela de Thomson",0);
 		
+		
+		System.out.println(a);
 		a.localizar(presa);
 		a.cazar(presa);
 
