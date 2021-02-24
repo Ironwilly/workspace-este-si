@@ -19,7 +19,8 @@ public class Principal {
 		List <String>listadoBueno = new ArrayList <String> ();
 		
 		
-		listadoBueno.add("Willy");
+		listadoBueno.add("Willy"); //listadobueno.add ---> el add es el api,q en este caso esta puesto en el main...
+		listadoBueno.add("Ángel");
 		
 		System.out.println(listadoBueno);
 		

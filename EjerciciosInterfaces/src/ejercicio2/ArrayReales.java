@@ -45,6 +45,8 @@ public class ArrayReales implements IEstadisticas{
 	
 	r = new Random(System.nanoTime());
 	
+	double desde = 0.0,hasta =0.0;
+	
 	num = new double[tam];
 	
 	for(int i=0;i<num.length;i++) {
