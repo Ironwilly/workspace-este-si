@@ -37,10 +37,10 @@ public class Principal {
 		
 		GestionClub gesClub = new GestionClub(new ArrayList<Socio>()); 
 		
-		gesClub.guardarSocio(so1);
-		gesClub.guardarSocio(so2);
-		gesClub.guardarSocio(so3);
-		gesClub.guardarSocio(so4);
+		gesClub.guardarSocio(0,so1);
+		gesClub.guardarSocio(1,so2);
+		gesClub.guardarSocio(2,so3);
+		gesClub.guardarSocio(3,so4);
 		
 		
 		do {
@@ -64,8 +64,8 @@ public class Principal {
 		switch(menu1) {
 		
 		case 1:
-			//System.out.println("Diga en qué posición quiere guardar el nuevo socio \n");
-			//index = Leer.datoInt();
+			System.out.println("Diga en qué posición quiere guardar el nuevo socio \n");
+			index = Leer.datoInt();
 			System.out.println("Diga el nombre del nuevo socio \n");
 			nombreSo= Leer.dato();
 			System.out.println("Diga los apellidos del nuevo socio \n");
@@ -79,9 +79,9 @@ public class Principal {
 			
 			numeroSo=r.nextInt(hasta-desde+1)+desde;
 			
-			System.out.println(numeroSo);
+			System.out.println("El nuevo socio tiene el numero: "+numeroSo);
 			
-			gesClub.guardarSocio(new Socio (nombreSo,apellidosSo,dniSo,movilSo,emailSo,numeroSo));
+			gesClub.guardarSocio(index,new Socio (nombreSo,apellidosSo,dniSo,movilSo,emailSo,numeroSo));
 			
 			break ;
 			

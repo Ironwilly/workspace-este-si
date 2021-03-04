@@ -36,10 +36,10 @@ public class GestionClub {
 	//métodos
 
 	//agregamos socio
-	public void guardarSocio(Socio so) {
+	public void guardarSocio(int index,Socio so) {
 		
 		
-		listaSocios.add(so);
+		listaSocios.add(index,so);
 	}
 	
 	
