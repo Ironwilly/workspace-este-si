@@ -109,6 +109,13 @@ public class Secretaria {
 			System.out.println("Error al insertar");
 		}
 		
+		public void imprimirAlu() {
+			
+			Iterator<Alumno> it = listAlumnos.iterator();
+			while (it.hasnext()) {
+				System.out.println(it.next());
+			}
+		}
 				
 	}
 }
