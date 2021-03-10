@@ -118,4 +118,13 @@ public class Secretaria {
 		}
 				
 	}
+	
+	
+	//imprimir todo con ITERATOR
+	public void mostrarTodos() {
+		Iterator<Alumno> it = listAlumnos.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+	}
 }
