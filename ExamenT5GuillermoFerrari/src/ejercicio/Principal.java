@@ -21,9 +21,9 @@ public class Principal {
 		String nombreEquipo = "Triana bulls";
 		List<Jugador> jugadores = new ArrayList<Jugador>();
 		
-		
+		Equipo e = new Equipo(jugadores,nombreEquipo);
 		do {
-		jugadores.add(new Jugador("Juanito","base",55,32,true));
+		e.agregarJugador(new Jugador("Juanito","base",55,32,true));
 		jugadores.add(new Jugador("Pepito","escolta",67,18,true));
 		jugadores.add(new Jugador("Manolito","alero",20,26,true));
 		jugadores.add(new Jugador("Luisito","ala",70,19,false));
@@ -36,7 +36,7 @@ public class Principal {
 		}
 		
 		
-		Equipo e = new Equipo(jugadores,nombreEquipo);
+		
 		
 		
 		

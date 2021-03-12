@@ -43,9 +43,9 @@ public class Equipo {
 
 	// métodos
 
-	public void agregarJugador(int index, Jugador ju) {
+	public void agregarJugador( Jugador ju) {
 
-		jugadores.add(index, ju);
+		jugadores.add(ju);
 	}
 
 	public void mostrarJugadores() {
