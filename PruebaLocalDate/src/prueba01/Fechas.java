@@ -1,7 +1,10 @@
 package prueba01;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 
 public class Fechas {
 	
@@ -20,5 +23,17 @@ public class Fechas {
 		
 		
 	}
+
+	
+	public static TemporalAdjuster dayOfWeekInMonth() {
+	    return TemporalAdjusters.dayOfWeekInMonth(3, DayOfWeek.FRIDAY);
+	}
+	
+	
+	
+
+	
+	
+	
 
 }
