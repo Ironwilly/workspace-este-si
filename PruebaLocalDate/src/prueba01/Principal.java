@@ -165,6 +165,24 @@ public class Principal {
       System.out.println(fechaActual1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
       System.out.println(fechaActual1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
       System.out.println(fechaActual1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      
+      LocalDate fechaRef6 = LocalDate.now();
+      System.out.println(fechaRef6);
+      
+      LocalDate diaRestado = fechaRef6.minusDays(280);
+      System.out.println(diaRestado);
+      LocalDate semanaRestada = fechaRef6.minusWeeks(3);
+      System.out.println(semanaRestada);
+      LocalDate yearRestado = fechaRef6.minusYears(8);
+      System.out.println(yearRestado);
+      
+      
+      
 	
 	}
 
