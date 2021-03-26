@@ -46,62 +46,33 @@ public class Principal {
 		String zona;
 		int year,mes,dia,year2,mes2,dia2;
 		int cantidad = 1;
+		String nombre,genero,calificacionEdad;
 		int MarvelC = 0,PlantsC = 0,YakuzaC =0,CrashC =0,TerminatorC = 0,RedC = 0,ZeldaC =0,ForzaC =0,GodC =0,StarcraftC =0;
 		int WitcherC = 0,UnchartedC =0,AstroC =0,BioshockC =0,DarkC =0,BatmanC =0;
 		int RatchetC =0,ImmortalsC =0,FortniteC =0,ResidentC =0;
 		
 		
+		Datos d = new Datos();
+		
+		CrudVideojuego crud = new CrudVideojuego(new ArrayList<Videojuego>());
+		
+		
+		
 
 		
+	
 		
+		System.out.println(d.vj10);
+		d.agregarVideojuego();
+		System.out.println(d.getListaJuegos());
 		
-		Videojuego vj1 = new Videojuego ("Marvel's Avengers","Acción/Aventura","+16");
-		Videojuego vj2 = new Videojuego ("Plants vs. Zombies: Battle for Neighborville","Shooter en tercera persona","+7");
-		Videojuego vj3 = new Videojuego ("Yakuza 6: The Song of Life ", "Mundo Abierto","+18");
-		Videojuego vj4 = new Videojuego ("Crash Bandicoot 4: It's About Time ","Plataformas","+7");
-		Videojuego vj5 = new Videojuego ("Terminator: Resistance Enhanced","Shooter en primera persona","+16");
-		Videojuego vj6 = new Videojuego ("Red Dead Redemption 2 ","Mundo Abierto","+18");
-		Videojuego vj7 = new Videojuego ("The Legend of Zelda: Breath of the Wild","Acción/Aventura","+12");
-		Videojuego vj8 = new Videojuego ("Forza Horizon 4","Coches","+16");
-		Videojuego vj9 = new Videojuego ("God of War","Acción/Aventura","+18");
-		Videojuego vj10 = new Videojuego ("StarCraft II: Wings of Liberty","Estrategia","+16");
-		Videojuego vj11 = new Videojuego ("The Witcher 3: Wild Hunt","Mundo Abierto","+18");
-		Videojuego vj12 = new Videojuego ("Uncharted 4: El Desenlace del Ladrón","Shooter en tercera persona","+16");
-		Videojuego vj13 = new Videojuego ("Astro Bot Rescue Mission ","Plataformas","+7");
-		Videojuego vj14 = new Videojuego ("BioShock Infinite","Shooter en primera persona","+18");
-		Videojuego vj15 = new Videojuego ("Dark Souls III","Acción/Aventura","+16");
-		Videojuego vj16 = new Videojuego ("Batman: Arkham City","Acción/Aventura","+16");
-		Videojuego vj17 = new Videojuego ("Ratchet & Clank","Shooter en tercera persona","+7");
-		Videojuego vj18 = new Videojuego ("Immortals Fenyx Rising","Mundo Abierto","+12");
-		Videojuego vj19 = new Videojuego ("Fortnite Battle Royale","Battle Royale","+12");
-		Videojuego vj20 = new Videojuego ("Resident Evil 7 ","Acción/Aventura","+18");
+		nombre = Leer.dato();
+		System.out.println(crud.buscarJuego(nombre));
 		
+	
 		
-		
-		
-		Plataforma platf = new Plataforma(new ArrayList<Videojuego>());
-		
-		platf.agregarVideojuego(vj1);
-		platf.agregarVideojuego(vj2);
-		platf.agregarVideojuego(vj3);
-		platf.agregarVideojuego(vj4);
-		platf.agregarVideojuego(vj5);
-		platf.agregarVideojuego(vj6);
-		platf.agregarVideojuego(vj7);
-		platf.agregarVideojuego(vj8);
-		platf.agregarVideojuego(vj9);
-		platf.agregarVideojuego(vj10);
-		platf.agregarVideojuego(vj11);
-		platf.agregarVideojuego(vj12);
-		platf.agregarVideojuego(vj13);
-		platf.agregarVideojuego(vj14);
-		platf.agregarVideojuego(vj15);
-		platf.agregarVideojuego(vj16);
-		platf.agregarVideojuego(vj17);
-		platf.agregarVideojuego(vj18);
-		platf.agregarVideojuego(vj19);
-		platf.agregarVideojuego(vj20);
-		
+	
+		/*
 		
 		do {
 		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\r\n"
@@ -250,7 +221,7 @@ public class Principal {
 			case 6:
 				System.out.println("Usted ha alquilado... "+vj6+"\n");
 				System.out.println("Desde la zona y fecha de: \n ");
-				platf.elegirZona(zona,year,mes,dia);
+				Plataforma.elegirZona(zona,year,mes,dia);
 				System.out.println("Recuerde que tienes hasta  ");
 				platf.sumarUnDia(year, mes, dia);
 				System.out.print(" para devolver el juego,ya que se le cobraría 3€ por cada día de demora de entrega. \n");
@@ -509,10 +480,11 @@ public class Principal {
 			
 			break;
 			
+			
 		}
 		
 		}while(menu1!=0);
-		
+		*/
 	}
 
 }

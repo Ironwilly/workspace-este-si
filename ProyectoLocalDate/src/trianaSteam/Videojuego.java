@@ -47,6 +47,8 @@ public class Videojuego {
 	public String toString() {
 		return " nombre= " + nombre + ", Genero= " + genero + ", Calificacion Edad= " + calificacionEdad + "\n";
 	}
+
+
 	
 	
 	//metodos

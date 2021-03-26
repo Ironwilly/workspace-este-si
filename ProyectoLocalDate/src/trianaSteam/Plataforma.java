@@ -1,7 +1,6 @@
 package trianaSteam;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -13,50 +12,21 @@ import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Plataforma {
 	
-	//Atributos
-	
-	private List<Videojuego>ListaJuegos;
+
 
 	
-	//constructores
-	public Plataforma(List<Videojuego> listaJuegos) {
-		super();
-		ListaJuegos = listaJuegos;
-	}
-
-
-	//getters and setters
-	
-	public List<Videojuego> getListaJuegos() {
-		return ListaJuegos;
-	}
-
-
-	public void setListaJuegos(List<Videojuego> listaJuegos) {
-		ListaJuegos = listaJuegos;
-	}
-
-
-	//ToString
-	@Override
-	public String toString() {
-		return "Plataforma [ListaJuegos=" + ListaJuegos + "]";
-	}
 	
 	//métodos
 	
 	//agregar videojuego
 	
 	
-	public void agregarVideojuego(Videojuego vj) {
-		
-		ListaJuegos.add(vj);
-	}
+	
 	
 	
 	//elegir la zona dependiendo del lugar que estés
 	
-	public static void elegirZona (String zona,int year,int mes,int dia) {
+	public  void elegirZona (String zona,int year,int mes,int dia) {
 		
 		LocalDate fechaRef1 = LocalDate.of(year, mes, dia);
 		
@@ -67,14 +37,14 @@ public class Plataforma {
 
 	//obtener el identificador de zona
 	
-	public static void verZona() {
+	public  void verZona() {
 		Set<String> zoneIds = ZoneId.getAvailableZoneIds();
 		System.out.println(zoneIds +"\n");
 	}
 	
 	//sumar un dia para mostrar fecha de entrega
 	
-	public static void sumarUnDia (int year,int mes,int dia) {
+	public  void sumarUnDia (int year,int mes,int dia) {
 		int day = 1;
 		
 		LocalDate fechaRef2 = LocalDate.of(year, mes, dia);
@@ -87,7 +57,7 @@ public class Plataforma {
 	
 	//calcular diferencias de dias desde que alquila hasta que devuelve el videojuego
 	
-	public static void diferenciaDeDias(int year,int mes, int dia,int year2,int mes2,int dia2) {
+	public  void diferenciaDeDias(int year,int mes, int dia,int year2,int mes2,int dia2) {
 		
 		double penalizacion = 3;
 		double aPagar ;
@@ -115,7 +85,7 @@ public class Plataforma {
 	
 	//fecha actual
 	
-	public static void diasQueFaltan () {
+	public  void diasQueFaltan () {
 		
 		LocalDate fechaActual = LocalDate.now();
 		System.out.print("Desde la fecha actual "+fechaActual);
@@ -130,7 +100,7 @@ public class Plataforma {
 	
 	//calcular si es año bisiesto o no
 	
-	public static void calcularBisiesto(int year,int mes,int dia) {
+	public  void calcularBisiesto(int year,int mes,int dia) {
 		
 		double precio =4.95;
 		int porcentaje = 30;
@@ -139,7 +109,7 @@ public class Plataforma {
 		if(fechaAMirar.isLeapYear()) {
 			System.out.println("Es bisiesto!!, así que tendrás tus alquileres todo el año con un 30% descuento.");
 			
-			precio = (precio *porcentaje)/100 + precio;
+			precio = (precio *porcentaje)/denominador + precio;
 			System.out.println("En este caso el precio por videojuego alquilado es de "+precio+" euros \n");
 		}else{
 			System.out.println("ohhh!!!, no es bisiesto, no tienes descuento del 30% este año.");
@@ -149,7 +119,7 @@ public class Plataforma {
 	
 	//Mostrar el primer día del mes de la fecha consultada
 	
-	public static void mostrarDiaPrimeroMes(int year,int mes,int dia) {
+	public  void mostrarDiaPrimeroMes(int year,int mes,int dia) {
 		
 	
 		LocalDate mostrarDia = LocalDate.of(year, mes, dia);
@@ -164,7 +134,7 @@ public class Plataforma {
 	
 	//Calcular 3 semanas para el descuento del 10%
 	
-	public static void calcularFechaTresSemanas(int year,int mes,int dia) {
+	public  void calcularFechaTresSemanas(int year,int mes,int dia) {
 		int tres= 3;
 		
 		LocalDate fechaRef3 = LocalDate.of(year, mes, dia);
