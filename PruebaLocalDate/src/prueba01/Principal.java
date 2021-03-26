@@ -5,17 +5,24 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.chrono.IsoChronology;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Locale;
-
+import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.ChronoUnit.MONTHS;
+import static java.time.temporal.ChronoUnit.WEEKS;
+import static java.time.temporal.ChronoUnit.YEARS;
 
 
 public class Principal {
+
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -182,6 +189,137 @@ public class Principal {
       System.out.println(yearRestado);
       
       
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      
+      LocalDate fechaRef9 = LocalDate.now();
+      
+      LocalDate diasSumados = fechaRef9.plusDays(40);
+      System.out.println(diasSumados);
+      LocalDate semanasSumadas = fechaRef9.plusWeeks(25);
+      System.out.println(semanasSumadas);
+      LocalDate mesesSumados = fechaRef9.plusMonths(30);
+      System.out.println(mesesSumados);
+      LocalDate yearsSumados = fechaRef9.plusYears(20);
+      System.out.println(yearsSumados);
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      
+      LocalDate fechaRef7 = LocalDate.now();
+      LocalDate fechaRef8 = LocalDate.of(1989, 07, 14);
+      
+      long numeroDeDias = DAYS.between(fechaRef8, fechaRef7);
+      long numeroSemanas = WEEKS.between(fechaRef8, fechaRef7);
+      long numeroMeses = MONTHS.between(fechaRef8, fechaRef7);
+      long numeroYears = YEARS.between(fechaRef8, fechaRef7);
+      System.out.println(numeroDeDias);
+      System.out.println(numeroSemanas);
+      System.out.println(numeroMeses);
+      System.out.println(numeroYears);
+      
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      
+      LocalDate fechaRef10 = LocalDate.of(2021, 11, 18);
+      LocalDate fechaRef11 = LocalDate.of(2021,11, 18);
+      
+      System.out.println(fechaRef10.compareTo(fechaRef11));
+      
+      LocalDate fechaRef12 = LocalDate.of(2021, 3, 15);
+      LocalDate fechaRef13 = LocalDate.of(2015, 6, 11);
+      
+      System.out.println(fechaRef12.compareTo(fechaRef13));
+      
+      LocalDate fechaRef14 = LocalDate.of(2001, 8, 15);
+      LocalDate fechaRef15 = LocalDate.of(2030, 1, 25);
+      
+      System.out.println(fechaRef14.compareTo(fechaRef15));
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      DateTimeFormatter miFormato3 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+      
+      String fechaRef16 = "2010/07/25";
+      
+      LocalDate cadAnalizada = LocalDate.parse(fechaRef16, miFormato3);
+      
+      
+      System.out.println(miFormato3.format(cadAnalizada)); 
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      LocalDate fechaRef17 = LocalDate.of(2010, 9, 16);
+      System.out.println(fechaRef17);
+      IsoChronology iso = localDate.getChronology();
+      System.out.println(iso);
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      LocalDate fechaRef18 = LocalDate.now();
+      System.out.println(fechaRef18);
+      System.out.println(fechaRef18.hashCode());
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      LocalDate fechaRef19 = LocalDate.now();
+      System.out.println(fechaRef19);
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      LocalDate fechaRef20 = LocalDate.of(2040, 7, 10);
+      System.out.println(fechaRef20);
+      System.out.println(fechaRef20.isLeapYear());
+      System.out.println("\n");
+      LocalDate fechaRef21 = LocalDate.of(2041, 7, 10);
+      System.out.println(fechaRef21);
+      System.out.println(fechaRef21.isLeapYear());
+      
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      
+      LocalDate fechaRef22 = LocalDate.of(2010, 7, 14);
+      LocalDate fechaRef23 = LocalDate.of(2012, 1, 22);
+      Period diferenciaFecha = fechaRef22.until(fechaRef23);
+      System.out.println(fechaRef22);
+      System.out.println(fechaRef23);
+      System.out.println(diferenciaFecha);
+     
+      System.out.println("\n");
+      System.out.println("\n");
+      System.out.println("\n");
+      
+      LocalDate fechaRef24 = LocalDate.of(2019, 1, 6);
+      LocalDate sumaSemanas = fechaRef24.plusWeeks(10);
+      System.out.println(fechaRef24);
+      System.out.println(sumaSemanas);
+     
+      
+      
+      
+      
+      
+     
       
 	
 	}
