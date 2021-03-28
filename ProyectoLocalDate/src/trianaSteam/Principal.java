@@ -312,6 +312,11 @@ public class Principal {
 					
 					System.out.println("Hasta la próxima. \n");
 				}
+				break;
+				
+				default :
+					System.out.println("Número erróneo. \n");
+					break;
 
 			}
 			
