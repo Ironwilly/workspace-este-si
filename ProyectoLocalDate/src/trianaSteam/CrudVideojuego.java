@@ -1,41 +1,34 @@
 package trianaSteam;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class CrudVideojuego {
 
-	
-	
+
+public class CrudVideojuego  {
+
+	//atributo
 	private List<Videojuego> ListaJuegos;
-	
-	
-	//constructores
-	
+
+	// constructores
+
 	public CrudVideojuego(List<Videojuego> listaJuegos) {
 		super();
 		ListaJuegos = listaJuegos;
 	}
 
-	
-
-	//getters and setters
+	// getters and setters
 
 	public List<Videojuego> getListaJuegos() {
 		return ListaJuegos;
 	}
 
-
-
-
-
 	public void setListaJuegos(List<Videojuego> listaJuegos) {
 		ListaJuegos = listaJuegos;
 	}
 
-
-	
-
-	//ToString
+	// ToString
 
 	@Override
 	public String toString() {
@@ -44,10 +37,11 @@ public class CrudVideojuego {
 
 	
 	
-	//Métodos
-
-	public int buscarJuego(String nombre) {
+	//Métodos 
+	
+	public int buscarrJuego(String nombre) {
 		int temp = -1;
+		
 		boolean salir = false;
 
 		for (int i = 0; i < ListaJuegos.size() && !salir; i++) {
@@ -58,10 +52,14 @@ public class CrudVideojuego {
 		}
 		return temp;
 	}
-	
+
 	
 	
 	
 
+
+	
+	
+	
 
 }

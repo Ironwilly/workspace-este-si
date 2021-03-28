@@ -1,18 +1,37 @@
 package trianaSteam;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import static java.time.temporal.ChronoUnit.DAYS;
 
+import java.time.Clock;
+import java.time.Instant;
+
 public class Plataforma {
 	
 
+
+	//atributo
+	private String nombrePlatf = "TrianaSteam";
+	
+	
+	
+	//constructor
+	
+	
+	public Plataforma(String nombrePlatf) {
+		super();
+		this.nombrePlatf = nombrePlatf;
+	}
 
 	
 	
@@ -28,18 +47,37 @@ public class Plataforma {
 	
 	public  void elegirZona (String zona,int year,int mes,int dia) {
 		
+		Clock hora = Clock.systemDefaultZone();
 		LocalDate fechaRef1 = LocalDate.of(year, mes, dia);
 		
-		ZoneId zonaRef1 = ZoneId.of(zona);
-		System.out.println(zonaRef1);
+
+
+
+        Instant ahora = hora.instant();
+        
+        ZoneId zonaRef1 = ZoneId.of(zona);
+        ZonedDateTime zonaRef2 = ZonedDateTime.ofInstant(ahora,zonaRef1);
+		
+		
+		System.out.println(zonaRef2);
 		System.out.println(fechaRef1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
 	}
 
 	//obtener el identificador de zona
 	
 	public  void verZona() {
-		Set<String> zoneIds = ZoneId.getAvailableZoneIds();
-		System.out.println(zoneIds +"\n");
+		
+		System.out.println("Como referencia puedes ayudarte de las siguientes zonas como ejemplo: \n");
+		System.out.println("Europe/Jersey\r\n"
+				+ "America/El_Salvador\r\n"
+				+ "Africa/Nairobi\r\n"
+				+ "Europe/Brussels\r\n"
+				+ "Canada/Atlantic\r\n"
+				+ "Europe/Rome\r\n"
+				+ "Europe/Budapest\r\n"
+				+ "America/Detroit");
+		/*Set<String> zoneIds = ZoneId.getAvailableZoneIds();
+		System.out.println(zoneIds +"\n");*/
 	}
 	
 	//sumar un dia para mostrar fecha de entrega
@@ -55,7 +93,7 @@ public class Plataforma {
 	}
 	
 	
-	//calcular diferencias de dias desde que alquila hasta que devuelve el videojuego
+	//calcular diferencias de días desde que alquila hasta que devuelve el videojuego
 	
 	public  void diferenciaDeDias(int year,int mes, int dia,int year2,int mes2,int dia2) {
 		
@@ -68,9 +106,12 @@ public class Plataforma {
 		LocalDate fechaDevolver = LocalDate.of(year2, mes2, dia2);
 		
 		long numeroDias = DAYS.between(fechaAlquiler, fechaDevolver);
-		if(numeroDias <2) {
+		if(numeroDias >0 && numeroDias <2) {
 			System.out.println("No tienes ninguna penalización, la entrega está dentro de plazo correcto.");
 			
+		}else if(numeroDias <0) {
+			
+			System.out.println("Estás loco!!, ¿cómo vas a entregar un juego antes de la fecha de alquier?");
 		}else {
 			
 			System.out.println("No has entregado dentro del plazo correcto, "
@@ -83,7 +124,7 @@ public class Plataforma {
 	}
 	
 	
-	//fecha actual
+	//dias que faltan para el próximo 50%
 	
 	public  void diasQueFaltan () {
 		
@@ -93,7 +134,7 @@ public class Plataforma {
 		System.out.print(" hasta "+ primeroMes);
 		Period diferenciaFecha = primeroMes.until(fechaActual);
 		System.out.println(" faltan un periodo de "+diferenciaFecha+" días para la siguiente \n"
-				+ "promoción de 2x1 en alquiler de videojuegos. \n");
+				+ "promoción del 50% en alquiler de videojuegos. \n");
 		
 		
 	}
@@ -110,7 +151,7 @@ public class Plataforma {
 			System.out.println("Es bisiesto!!, así que tendrás tus alquileres todo el año con un 30% descuento.");
 			
 			precio = (precio *porcentaje)/denominador + precio;
-			System.out.println("En este caso el precio por videojuego alquilado es de "+precio+" euros \n");
+			System.out.printf("En este caso el precio por videojuego alquilado es de %.2f euros \n",precio);
 		}else{
 			System.out.println("ohhh!!!, no es bisiesto, no tienes descuento del 30% este año.");
 		};
@@ -140,6 +181,16 @@ public class Plataforma {
 		LocalDate fechaRef3 = LocalDate.of(year, mes, dia);
 		LocalDate sumaSemanas = fechaRef3.plusWeeks(tres);
 		System.out.println(sumaSemanas);
+		System.out.println("***Este descuento se aplicará si no coincide con ningún descuento adicional***");
 		
 	}
+		//mostrar fecha y hora actual
+		
+		public void mostrarFechaYHora(){
+			LocalDateTime fecHora = LocalDateTime.now();
+			
+			System.out.println(fecHora);
+		}
+		
+	
 }
