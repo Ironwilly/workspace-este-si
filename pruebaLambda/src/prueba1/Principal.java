@@ -14,8 +14,16 @@ public class Principal {
 		int menu1;
 		String marca;
 		
-		CrudConcesionario cc = new CrudConcesionario(new ArrayList<Coche>()); 
+		
+		
+		
+		
+		Datos d = new Datos ();
+		
+		
+		CrudConcesionario cc = new CrudConcesionario(d.getListaCar()); 
 		Imprimir imp = new Imprimir(cc);
+		
 		
 		
 		System.out.println("***********************************************\r\n"
@@ -36,7 +44,9 @@ public class Principal {
 			
 			System.out.println("Diga la marca de coche que quieres buscar \n");
 			marca = Leer.dato();
+			
 			imp.imprimirUnCocheDado(cc.buscarMarcaStream(marca));
+			cc.mostrarFechaYHoraActual();
 			
 			
 			break;

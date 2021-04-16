@@ -1,12 +1,18 @@
 package prueba1;
 
+import java.time.LocalDate;
+
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import static java.time.temporal.ChronoUnit.DAYS;;
 
 public class CrudConcesionario {
+	
 	
 	
 	//atributos
@@ -110,7 +116,11 @@ public class CrudConcesionario {
 	
 	public void mostrarFechaYHoraActual() {
 		
-		LocalDateTime.now();
+		LocalDateTime fecharef = LocalDateTime.now();
+		
+		DateTimeFormatter patron = DateTimeFormatter.ofPattern("dd ' del ' MM ' del año' YYYY '\nHora ' hh':'mm ");
+		System.out.println(fecharef.format(patron));
+		
 		
 	}
 	
