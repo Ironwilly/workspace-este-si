@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"prueba1","l":"Coche"},{"p":"prueba1","l":"CrudConcesionario"},{"p":"prueba1","l":"Datos"},{"p":"prueba1","l":"Imprimir"},{"p":"utilidades","l":"Leer"},{"p":"prueba1","l":"Principal"}]

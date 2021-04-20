@@ -1,5 +1,6 @@
 package prueba1;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,13 +10,6 @@ import utilidades.Leer;
 
 
 
-
-/**
- * 
- * @author Guillermo Ferrari
- * @version 1.1 19/04/2024
- *
- */
 
 
 
@@ -28,6 +22,10 @@ public class Principal {
 		
 		int menu1,indice;
 		String marca,color,modelo;
+		int potencia;
+		
+		int year,mes,dia;
+		
 		
 		
 		
@@ -49,6 +47,9 @@ public class Principal {
 				+ "** 4 --> Ordenar por orden alfabetico marca  **\r\n"
 				+ "** 5 --> Ordenar por orden alfabetico modelo **\r\n"
 				+ "** 6 --> Ordenar por orden de potencia       **\r\n"
+				+ "** 7 --> Agregar coche                       **\r\n"
+				+ "** 8 --> Mostrar lista de coches             **\r\n"
+				+ "** 9 --> Calcular la antigüedad de tu coche  **\r\n"
 				+ "** 0 --> Salir                               **\r\n"
 				+ "***********************************************");
 		
@@ -133,7 +134,65 @@ public class Principal {
 			
 			break;
 			
+		case 7:
 			
+			System.out.println("Diga la marca del coche \n");
+			marca = Leer.dato();
+			System.out.println("Diga el modelo de coche \n");
+			modelo = Leer.dato();
+			System.out.println("Diga la potencia del coche \n");
+			potencia = Leer.datoInt();
+			System.out.println("Diga el color del coche \n");
+			color = Leer.dato();
+			Coche co = new Coche( marca,modelo,potencia, color);
+			
+			cc.agregarCoche(co);
+			
+			System.out.print("La agregación del nuevo coche ha sido realizada el ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			break;
+			
+		case 8:
+			
+			imp.imprimirListaCoches();
+			
+			System.out.print("Esta es la lista de coche actualizada a la fecha  ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			break;
+		case 9:
+			
+			System.out.println("Indique el año de tu coche \n");
+			year = Leer.datoInt();
+			System.out.println("Indique el mes de tu coche \n");
+			mes = Leer.datoInt();
+			System.out.println("Indique el día de tu coche \n");
+			dia = Leer.datoInt();
+			System.out.println("Su coche tiene una antigüedad de \n");
+			LocalDate fechaRef = LocalDate.of(year, mes, dia);
+			cc.calcularAntiguedad(fechaRef);
+			
+			break;
+			
+		case 0:
+			
+			System.out.println("Hasta la pronto! \n");
+			
+			System.out.print("Usted se ha ido del concesionario el  \n");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			
+			break;
+			
+			default :
+				
+				System.out.println("Número erróneo! \n");
+				
+				break;
 		
 		
 		}

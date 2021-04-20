@@ -15,12 +15,6 @@ import static java.time.temporal.ChronoUnit.DAYS;;
 
 
 
-/**
- * 
- * @author Guillermo Ferrari
- * @version 1.1 19/04/2021
- *
- */
 
 public class CrudConcesionario {
 	
@@ -59,13 +53,7 @@ public class CrudConcesionario {
 	
 	//buscar por marca de coche 
 	
-	
-	/**
-	 * 
-	 * Este método busca pasandole el parámetro marca en una lista de coche, la marca a buscar
-	 * @param marca es string
-	 * 
-	 */
+
 
 	
 	public void buscarMarcaStream(String marca) {
@@ -78,26 +66,7 @@ public class CrudConcesionario {
 	}
 	
 	
-	
-	//método ficticio
-	
 
-	/**
-	 * 
-	 * Este método devuelve el resultado de la suma, pasándole 2 parámetros
-	 * @param numero1 primer número a sumar
-	 * @param numero2 segundo número a sumar
-	 * @return devuelve la suma del numero1 + numero2
-	 * 
-	 */
-	
-	
-	public int sumarDosNumeros(int numero1, int numero2) {
-		
-		return numero1 + numero2;
-		
-	}
-	
 	
 	
 	//buscar por color
@@ -171,6 +140,23 @@ public class CrudConcesionario {
 	}
 	
 	
+	//método agregar coche
 	
+	public void agregarCoche(Coche co) {
+		
+		ListaDeCoches.add(co);
+	}
+	
+	//método para calcular la antigüedad del coche
+	
+	
+	public void calcularAntiguedad(LocalDate fecha1) {
+		
+		DateTimeFormatter t = DateTimeFormatter.ofPattern("'tiene una antiguedad de ' yy ' años' ");
+		LocalDate fecha2 = LocalDate.now();
+		
+		System.out.println(fecha1.until(fecha2));
+		
+	}
 
 }
