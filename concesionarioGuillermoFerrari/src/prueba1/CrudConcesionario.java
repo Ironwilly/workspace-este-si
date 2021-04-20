@@ -3,8 +3,10 @@ package prueba1;
 import java.time.LocalDate;
 
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -150,12 +152,16 @@ public class CrudConcesionario {
 	//método para calcular la antigüedad del coche
 	
 	
-	public void calcularAntiguedad(LocalDate fecha1) {
+	public void calcularAntiguedad(String fecha1) {
 		
-		DateTimeFormatter t = DateTimeFormatter.ofPattern("'tiene una antiguedad de ' yy ' años' ");
-		LocalDate fecha2 = LocalDate.now();
+	
 		
-		System.out.println(fecha1.until(fecha2));
+		  LocalDate fecha2 = LocalDate.now();
+	        LocalDate fecha3 = LocalDate.parse(fecha1, DateTimeFormatter.ISO_LOCAL_DATE);
+
+	        Period antiguedad = fecha2.until(fecha3);
+	        System.out.println("Su coche tiene una antigüedad de : "+antiguedad);
+		
 		
 	}
 

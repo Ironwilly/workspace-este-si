@@ -10,7 +10,18 @@ import utilidades.Leer;
 
 
 
-
+/**
+ * 
+ * @author Guillermo Ferrari Ferrari
+ * @version 1.0 20/04/2021   
+ *
+ * Este programa consiste en la gestión de un concesionario, el cual puede buscar por marca,modelo o color un coche de la lista.
+ * Tambien hace la función de ordenar por marca, modelo y potencia la lista de coches.
+ * En cada gestion muestra la fecha y hora actual a la que se hace la petición.
+ * Muestra la lista de coches, y puede tambien agregar un nuevo coche a la lista.
+ * Por último te muestra la antigüedad de tu coche, metiendo como parámetro la fecha exacta de este.
+ *
+ */
 
 
 
@@ -165,14 +176,9 @@ public class Principal {
 			break;
 		case 9:
 			
-			System.out.println("Indique el año de tu coche \n");
-			year = Leer.datoInt();
-			System.out.println("Indique el mes de tu coche \n");
-			mes = Leer.datoInt();
-			System.out.println("Indique el día de tu coche \n");
-			dia = Leer.datoInt();
-			System.out.println("Su coche tiene una antigüedad de \n");
-			LocalDate fechaRef = LocalDate.of(year, mes, dia);
+			System.out.println("Indique la fecha en (yyyy-mm-dd) de antigüedad que tiene su coche \n");
+			
+			String fechaRef = Leer.dato();
 			cc.calcularAntiguedad(fechaRef);
 			
 			break;
