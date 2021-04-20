@@ -25,7 +25,8 @@ public class Datos {
 		
 		listaCar.add(new Coche ("Toyota","Celica",143,"Azul"));
 		listaCar.add(new Coche ("Renault","Megane",90,"Rojo"));
-		listaCar.add(new Coche ("Seat","Leon",110,"Blanco"));
+		listaCar.add(new Coche ("Seat","Leon",110,"Rojo"));
+		listaCar.add(new Coche ("Seat","Leon",150,"Verde"));
 		listaCar.add(new Coche ("Seat","Ibiza",105,"Gris"));
 		listaCar.add(new Coche ("BMW", "325",190,"Negro"));
 	}

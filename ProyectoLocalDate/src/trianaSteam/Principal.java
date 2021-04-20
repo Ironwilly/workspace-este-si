@@ -2,10 +2,19 @@ package trianaSteam;
 
 import java.util.ArrayList;
 
+
+
 import java.util.List;
 
 import utilidades.Leer;
 import java.time.LocalDate;
+
+
+/**
+ * 
+ * @author ferra
+ * @version 1.1 24/04/2021
+ */
 
 public class Principal {
 

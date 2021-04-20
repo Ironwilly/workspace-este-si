@@ -1,9 +1,24 @@
 package prueba1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import utilidades.Leer;
+
+
+
+
+
+/**
+ * 
+ * @author Guillermo Ferrari
+ * @version 1.1 19/04/2024
+ *
+ */
+
+
+
 
 public class Principal {
 
@@ -11,8 +26,8 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		
-		int menu1;
-		String marca;
+		int menu1,indice;
+		String marca,color,modelo;
 		
 		
 		
@@ -24,7 +39,7 @@ public class Principal {
 		CrudConcesionario cc = new CrudConcesionario(d.getListaCar()); 
 		Imprimir imp = new Imprimir(cc);
 		
-		
+		do {
 		
 		System.out.println("***********************************************\r\n"
 				+ "***********************************************\r\n"
@@ -45,16 +60,84 @@ public class Principal {
 			System.out.println("Diga la marca de coche que quieres buscar \n");
 			marca = Leer.dato();
 			
-			imp.imprimirUnCocheDado(cc.buscarMarcaStream(marca));
+			
+			cc.buscarMarcaStream(marca);
+			System.out.print("La búsqueda ha sido realizada el ");
 			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+		
 			
 			
 			break;
+			
+		case 2:
+			System.out.println("Diga el color por el que quieres buscar el coche ");
+			
+			color = Leer.dato();
+			
+			
+			
+				cc.buscarColorStream(color);
+
+			System.out.print("La búsqueda ha sido realizada el ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			
+
+			break;
+			
+		case 3:
+			
+			System.out.println("Diga el modelo del coche que quieres buscar ");
+			
+			modelo = Leer.dato();
+			cc.buscarModeloStream(modelo);
+			
+			System.out.print("La búsqueda ha sido realizada el ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			break;
+			
 		
-		
+		case 4:
+			
+			cc.ordenarPorMarca();
+			imp.imprimirListaCoches();
+			
+			System.out.print("La ordenación ha sido realizada el ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			break;
+			
+		case 5:
+			
+			cc.ordenarPorModelo();
+			imp.imprimirListaCoches();
+			
+			System.out.print("La ordenación ha sido realizada el ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			break;
+			
+		case 6:
+			
+			cc.ordenarPorPotencia();
+			imp.imprimirListaCoches();
+			
+			System.out.print("La ordenación ha sido realizada el ");
+			cc.mostrarFechaYHoraActual();
+			System.out.println("\n");
+			
+			break;
+			
+			
 		
 		
 		}
+		}while(menu1 !=0);
 		
 
 	}

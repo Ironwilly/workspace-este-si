@@ -1,6 +1,12 @@
 package trianaSteam;
 
 
+/**
+ * en esta clase ponemos todos los métodos crud y buscar
+ */
+
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +42,12 @@ public class CrudVideojuego  {
 	}
 
 	
+	
+	/**
+	 * 
+	 * @param nombre
+	 * @return devuelve verdadero en caso de encontrar el juego
+	 */
 	
 	//Métodos 
 	

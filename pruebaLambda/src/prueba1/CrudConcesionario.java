@@ -6,10 +6,21 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import static java.time.temporal.ChronoUnit.DAYS;;
+
+
+
+
+/**
+ * 
+ * @author Guillermo Ferrari
+ * @version 1.1 19/04/2021
+ *
+ */
 
 public class CrudConcesionario {
 	
@@ -48,38 +59,72 @@ public class CrudConcesionario {
 	
 	//buscar por marca de coche 
 	
-	public Coche buscarMarcaStream(String marca) {
+	
+	/**
+	 * 
+	 * Este método busca pasandole el parámetro marca en una lista de coche, la marca a buscar
+	 * @param marca es string
+	 * 
+	 */
+
+	
+	public void buscarMarcaStream(String marca) {
 		
-		return ListaDeCoches
+		 ListaDeCoches
 				.stream()
 				.filter(x -> x.getMarca().equalsIgnoreCase(marca))
-				.findAny()
-				.orElse(null);
+				.forEach(x -> System.out.println(x));
+				
 	}
+	
+	
+	
+	//método ficticio
+	
+
+	/**
+	 * 
+	 * Este método devuelve el resultado de la suma, pasándole 2 parámetros
+	 * @param numero1 primer número a sumar
+	 * @param numero2 segundo número a sumar
+	 * @return devuelve la suma del numero1 + numero2
+	 * 
+	 */
+	
+	
+	public int sumarDosNumeros(int numero1, int numero2) {
+		
+		return numero1 + numero2;
+		
+	}
+	
 	
 	
 	//buscar por color
 	
-	public Coche buscarColorStream (String color) {
+	public void buscarColorStream (String color) {
 		
-		return ListaDeCoches
+		ListaDeCoches
 				.stream()
 				.filter(x -> x.getColor().equalsIgnoreCase(color))
-				.findAny()
-				.orElse(null);
+				.forEach(x -> System.out.println(x));
+				
 		
 	}
 	
+	
+	
 	//buscar por modelo
 	
-	public Coche buscarModeloStream (String modelo) {
+
+	
+	public void buscarModeloStream (String modelo) {
 		
 		
-		return ListaDeCoches
+		 ListaDeCoches
 				.stream()
 				.filter(x -> x.getModelo().equalsIgnoreCase(modelo))
-				.findAny()
-				.orElse(null);
+				.forEach(x -> System.out.println(x));
 	}
 	
 	//ordenar lista por orden alfabetico de marca
@@ -90,6 +135,7 @@ public class CrudConcesionario {
 		.stream()
 		.sorted((co1,co2)-> co1.getMarca().compareToIgnoreCase(co2.getMarca()))
 		.collect(Collectors.toList());
+		
 	}
 	
 	//ordenar lista por orden alfabetico modelo
@@ -108,7 +154,7 @@ public class CrudConcesionario {
 		
 		ListaDeCoches = ListaDeCoches
 				.stream()
-				.sorted()
+				.sorted(Comparator.comparingInt(x -> x.getPotencia()))
 				.collect(Collectors.toList());
 	}
 	
@@ -118,13 +164,12 @@ public class CrudConcesionario {
 		
 		LocalDateTime fecharef = LocalDateTime.now();
 		
-		DateTimeFormatter patron = DateTimeFormatter.ofPattern("dd ' del ' MM ' del año' YYYY '\nHora ' hh':'mm ");
+		DateTimeFormatter patron = DateTimeFormatter.ofPattern("dd ' del ' MM ' del año' YYYY 'a la hora ' kk':'mm ");
 		System.out.println(fecharef.format(patron));
 		
 		
 	}
 	
-	//agregar coche
 	
 	
 
