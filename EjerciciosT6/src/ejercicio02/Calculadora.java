@@ -47,35 +47,35 @@ public class Calculadora {
 	
 	//método para calcular la suma de 2 números enteros
 	
-	public int calcularSuma(int a, int b)throws NumberFormatException,ArithmeticException,Exception{
+	public int calcularSuma(int a, int b) {
 		
 		return a+b;
 	}
 	
 	//método para calcular la resta de 2 números enteros
 	
-	public int calcularResta(int a,int b) throws NumberFormatException,ArithmeticException,Exception{
+	public int calcularResta(int a,int b) {
 		
 		return a-b;
 	}
 	
 	//método para calcular la multiplicación de 2 números enteros
 	
-	public int calcularMultiplicacion(int a,int b)throws NumberFormatException,ArithmeticException,Exception {
+	public int calcularMultiplicacion(int a,int b) {
 		
 		return a*b;
 	}
 	
 	//método para calcular la división de 2 números enteros
 	
-	public int calcularDivision(int a,int b)throws NumberFormatException,ArithmeticException,Exception {
+	public int calcularDivision(int a,int b)throws ArithmeticException {
 		
 		return a/b;
 	}
 	
 	//método para calcular la raiz cuadrada de un número 
 	
-	public int calcularRaizCuadrada(int a)throws NumberFormatException,ArithmeticException,Exception {
+	public int calcularRaizCuadrada(int a)throws ArithmeticException {
 		
 		return (int) Math.sqrt(a);
 	}
