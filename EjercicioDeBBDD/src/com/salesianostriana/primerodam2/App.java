@@ -1,5 +1,6 @@
 package com.salesianostriana.primerodam2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,6 +8,7 @@ import java.util.Scanner;
 import com.salesianostriana.primerodam.dao.CrudAlumnoEnMemoria;
 import com.salesianostriana.primerodam.dao.ICrudAlumno;
 import com.salesianostriana.primerodam.modelo.Alumno;
+import com.salesianostriana.primerodam.servicios.AlumnoServicio;
 
 
 
@@ -56,17 +58,64 @@ public class App {
 		 * 
 		 * 
 		 */
-		String fechNacimiento;
+		
+		
+		long id;
+		String nombre;
+		String apellidos;
+		LocalDate fechaNacimiento;
+		String email;
+		int menu1;
+		
+		List<Alumno> ListaAlumnos = new ArrayList<Alumno>();
 		
 		Scanner sc = new Scanner(System.in);
 		
-		Alumno al = new Alumno();
+		do {
+			System.out.println("1 --> Agregar alumno\r\n"
+					+ "0 --> Salir \n");
+		String aux0 = sc.nextLine();
+		menu1 = Integer.parseInt(aux0);
+		
+		
+		switch(menu1) {
+		
+		case 1:
+		
+		System.out.println("Diga el id del alumno \n");
+		String aux1= sc.nextLine();
+		id = Long.parseLong(aux1);
+		System.out.println("Diga el nombre del alumno \n");
+		nombre = sc.nextLine();
+		System.out.println("Diga los apellidos del alumno \n");
+		apellidos = sc.nextLine();
+		System.out.println("Diga la fecha de nacimiento del alumno \n");
+		String aux2 = sc.nextLine();
+		fechaNacimiento = LocalDate.parse(aux2);
+		System.out.println("Diga el email del alumno \n");
+		email= sc.nextLine();
+		
+
+		Alumno al = new Alumno( id,  nombre,  apellidos,  fechaNacimiento,  email);
 		
 	
-		CrudAlumnoEnMemoria calm = new CrudAlumnoEnMemoria(new ArrayList<Alumno>());
-	
+		AlumnoServicio aluSer = new AlumnoServicio();
 		
 		
+		System.out.println(al);
+		
+		
+		break;
+		
+		case 2:
+			
+			
+			
+		
+		
+		}
+		
+		}while(menu1 !=0);
 		
 		
 	}

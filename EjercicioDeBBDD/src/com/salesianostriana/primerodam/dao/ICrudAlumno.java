@@ -6,18 +6,17 @@ import com.salesianostriana.primerodam.modelo.Alumno;
 
 public interface ICrudAlumno {
 	
-	public static final List<Alumno> ListaDeAlumnos = null;
+	
 	 
 	 //métodos
 	 
 	 //método agregar alumno
 	 
-	 public static boolean agregarAlumno(Alumno alu) {
-		 
-		 return ListaDeAlumnos.add(alu);
-		 
-		 
-	 }
+	public List<Alumno> findAll();
+    public Alumno findOne(long id);
+    public void insert(Alumno alumno);
+    public void edit(Alumno alumno);
+    public void delete(Alumno alumno);
 	 
 
 }
