@@ -49,11 +49,7 @@ public class Principal {
 				String aux2 = sc.nextLine();
 				c = Integer.parseInt(aux2);
 
-				if (x2.calcularDiscriminante(a, b, c) >= cero) {
-					System.out.println("La solución1 es: \n"+x2.calcularEcuacion2Grado1(a, b, c));
-					System.out.println("La solucion2 es: \n"+x2.calcularEcuacion2Grado2(a, b, c));
-
-				}
+				
 				if (x2.calcularDiscriminante(a, b, c) < cero) {
 
 					al.mostrarAlerta2(x2.calcularDiscriminante(a, b, c));
@@ -66,6 +62,12 @@ public class Principal {
 				else if (a == cero && b != cero) {
 
 					System.out.println("La ecuación tiene una raíz única igual a : " + x2.raizUnica(a, b, c));
+				}
+				
+				if (x2.calcularDiscriminante(a, b, c) >= cero) {
+					System.out.println("La solución1 es: \n"+x2.calcularEcuacion2Grado1(a, b, c));
+					System.out.println("La solucion2 es: \n"+x2.calcularEcuacion2Grado2(a, b, c));
+
 				}
 
 				continuar = false;
