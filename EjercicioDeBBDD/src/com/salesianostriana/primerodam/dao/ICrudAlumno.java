@@ -12,11 +12,12 @@ public interface ICrudAlumno {
 	 
 	 //método agregar alumno
 	 
-	public List<Alumno> findAll();
-    public Alumno findOne(long id);
-    public void insert(Alumno alumno);
-    public void edit(Alumno alumno);
-    public void delete(Alumno alumno);
+	 public static boolean agregarAlumno(Alumno alu) {
+		 
+		
+		 
+		 
+	 }
 	 
 
 }

@@ -1,8 +1,6 @@
 package com.salesianostriana.primerodam.modelo;
 
 import java.time.LocalDate;
-import java.time.temporal.TemporalAdjuster;
-import java.time.temporal.TemporalAdjusters;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 import static java.time.temporal.ChronoUnit.MONTHS;
@@ -133,13 +131,12 @@ public class Alumno {
 	
 	public void mostrarEdad(String fechNacimiento) {
 		
-		
-		LocalDate fecha1 = LocalDate.now().with(TemporalAdjusters.lastDayOfYear());
+		LocalDate fecha1 = LocalDate.of(2021, 12, 31);
 		LocalDate fecha2 = LocalDate.parse(fechNacimiento);
 		
 		long numeroYear = YEARS.between(fecha2,fecha1);
 		
-		System.out.println("El alumno a fecha "+fecha1+" tiene un total de "+numeroYear+" años \n");
+		System.out.println("El alumno a fecha 31-12-2021 tiene un total de "+numeroYear+" años \n");
 		
 	}
 	
